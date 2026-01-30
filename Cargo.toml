@@ -1,0 +1,16 @@
+[package]
+name = "cf-switch"
+version = "0.1.0"
+edition = "2021"
+description = "A Cloudflare profile switcher for flarectl"
+license = "MIT"
+repository = "https://github.com/CharlonTank/cf-switch"
+keywords = ["cloudflare", "flarectl", "cli", "dns", "cache"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dirs = "5"
+colored = "2"
