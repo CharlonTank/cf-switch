@@ -1,6 +1,6 @@
 [package]
 name = "cf-switch"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A Cloudflare profile switcher for flarectl"
 license = "MIT"
