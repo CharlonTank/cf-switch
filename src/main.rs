@@ -283,9 +283,9 @@ fn main() {
                                 msg!("{} Purging cache for {} using profile '{}'...", "→".cyan(), z.bold(), name.cyan());
 
                                 let output = Command::new("flarectl")
-                                    .env("CF_API_EMAIL", &profile.email)
                                     .env("CF_API_TOKEN", &profile.token)
-                                    .env("CF_API_KEY", &profile.token)
+                                    .env_remove("CF_API_EMAIL")
+                                    .env_remove("CF_API_KEY")
                                     .args(["zone", "purge", "--zone", &z, "--everything"])
                                     .output();
 
@@ -337,9 +337,9 @@ fn main() {
                                 msg!("{} Adding Lamdera DNS record for {} using profile '{}'...", "→".cyan(), d.bold(), name.cyan());
 
                                 let output = Command::new("flarectl")
-                                    .env("CF_API_EMAIL", &profile.email)
                                     .env("CF_API_TOKEN", &profile.token)
-                                    .env("CF_API_KEY", &profile.token)
+                                    .env_remove("CF_API_EMAIL")
+                                    .env_remove("CF_API_KEY")
                                     .args(["dns", "create", "--zone", &d, "--type", "CNAME", "--name", "@", "--content", "apps.lamdera.app", "--proxy"])
                                     .output();
 
